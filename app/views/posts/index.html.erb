@@ -1,0 +1,34 @@
+<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Cheer</th>
+    <th>Uncheer</th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%=h User.find_by_id(post.user_id).name %></td>
+    <td><%=h post.title %></td>
+    <td><%=h post.content %></td>
+    <td><%=h post.cheer %></td>
+    <td><%=h post.uncheer %></td>
+    <td><%= link_to 'Show', post %></td>
+	<% if post.user_id == session[:user_id]%>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+	<% end %>
+	<% if post.user_id == session[:user_id] or User.find_by_id(session[:user_id]).privilege == 1%>
+    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
+    <td><%= link_to 'Cheer', {:controller => 'post_cheer',:action => 'cheer', :id => post} %></td>
+    <td><%= link_to 'Uncheer', {:controller => 'post_cheer',:action =>'uncheer', :id => post} %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New post', new_post_path %>

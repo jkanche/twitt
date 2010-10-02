@@ -1,0 +1,69 @@
+<h1>Full Post</h1> 
+
+<p>
+  <b>Name:</b>
+  <%=h @post.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @post.content %>
+</p>
+
+<p>
+  <b>Cheer:</b>
+  <%=h @post.cheer %>
+</p>
+
+<p>
+  <b>Uncheer:</b>
+  <%=h @post.uncheer %>
+</p>
+<tr>
+  <td><%= link_to 'Cheer', {:action => 'cheer', :id => @post.id} %></td>
+  <td><%= link_to 'Uncheer', {:action =>'uncheer', :id => @post.id} %></td>
+</tr>
+<h4>Comments</h4>
+
+<div>
+ <table>
+   <% @post.comments.each do |c| %>
+    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+    	
+	<td class="list-description">
+		<dl>
+		<dt><%=h c.commenter %> said:</dt>
+		<dd><%=time_ago_in_words (c.created_at) %>ago</dd>
+		<dd><%=h c.body %></dd>
+        <dd><b>Cheer : </b><%=h c.cheer %>
+        <b>Uncheer : </b><%=h c.uncheer %></dd>
+        <dd><%= link_to 'Cheer', {:action => 'commentscheer', :id => c.id} %>
+        <%= link_to 'Uncheer', {:action =>'commentsuncheer', :id => c.id} %></dd>
+		</dl>
+	</td>
+
+   </tr>
+  <% end %>
+</table>
+</div>
+<% form_for [@post, Comment.new] do |f| %>
+  <p>
+
+    <%= f.label :commenter, "User" %><br />
+    <%= f.text_field :commenter %><br />
+    <%= f.label :body, "Reply" %><br />
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit "Add Comment" %>
+  </p>
+<%end%>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

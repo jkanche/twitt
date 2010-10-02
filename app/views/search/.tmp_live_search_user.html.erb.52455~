@@ -1,0 +1,11 @@
+<% if @users.nil? or @users.empty?%>
+   <br />	Query not found!!	
+<% else %>
+<table>
+   <% @users.each do |user| %>
+      <tr>
+        <td><%=h user.name %></td>
+	  </tr>
+   <%end%>
+ </table>
+ <% end %>  

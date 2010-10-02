@@ -1,0 +1,2 @@
+module CommentCheerHelper
+end

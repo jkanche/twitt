@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  title: MyStrng
+  content: MyText
+  cheer: 1
+  uncheer: 0
+  user: users(:abcde)
+
+two:
+  name: MyString
+  title: MyString
+  content: MyText
+  cheer: 0
+  uncheer: 1
+  user: users(:jayaram)

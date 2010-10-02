@@ -1,0 +1,16 @@
+<h1> Search Posts</h1>
+
+<%= javascript_include_tag "prototype" %>
+
+<%= form_tag({:action => 'search'})%>
+<%= text_field_tag :searchtext %>
+<% form_tag %>
+
+<%= observe_field(:searchtext ,
+				 :frequency => 0.5,
+				  :update => :results,
+				  :with => 'query',
+				 :url => {:action => :live_search_post})%>
+				 
+<span id="results"> </span>
+	 

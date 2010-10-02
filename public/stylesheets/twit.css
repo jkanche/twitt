@@ -1,0 +1,124 @@
+h1 {
+        font:  150% sans-serif;
+        color: #226;
+        border-bottom: 3px dotted #77d;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+#banner {
+background: #ff0f00 ;
+padding-top: 10px;
+padding-bottom: 10px;
+border-bottom: 2px solid;
+font: small-caps 40px/40px "Times New Roman", serif;
+color: #282 ;
+text-align: center;
+}
+
+#banner img {
+float: left;
+}
+
+#columns {
+background: #0ffff0 ;
+}
+
+#main {
+margin-left: 13em;
+padding-top: 4ex;
+padding-left: 2em;
+background: white;
+}
+
+#side {
+float: left;
+padding-top: 1em;
+padding-left: 1em;
+padding-bottom: 1em;
+width: 12em;
+background: #145 ;
+}
+
+#side a {
+color: #bfb ;
+font-size: small;
+}
+
+#table {
+        border-collapse: collapse;
+}
+
+#table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+
+#list-line-even {
+  background:   #e0f8f8;
+}
+
+#list-line-odd {
+  background:   #f8b0f8;
+}
+
+#list-description dd {
+        margin: 0;
+}
+
+#list-description {
+  width:        60%;
+}
+
+#list-description dl {
+        margin: 0;
+}
+
+#list-description dt {
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+
+#notice {
+border: 2px solid red;
+padding: 1em;
+margin-bottom: 2em;
+background-color: #f0f0f0 ;
+font: bold smaller sans-serif;
+}

@@ -1,0 +1,25 @@
+<% if @user_post.nil? or  @user_post.empty?  %>
+	<br />	Query not found!!	
+<% else %>
+<br />
+      Found!! <br /><b><%= @number_match %></b> time(s)! <br />
+<table>
+  <tr>
+    <th>User</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Cheer</th>
+    <th>Uncheer</th>
+  </tr>
+<% @user_post.each do |post| %>
+  <tr>
+    <td><%=h User.find_by_id(post.user_id).name %></td>
+    <td><%=h post.title %></td>
+    <td><%=h post.content %></td>
+    <td><%=h post.cheer %></td>
+    <td><%=h post.uncheer %></td>
+    <td><%= link_to 'Show', url_for(post_path(post.id)) %></td>
+  </tr>
+<% end %>
+</table>
+<%end%>

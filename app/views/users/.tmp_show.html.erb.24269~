@@ -1,0 +1,16 @@
+<h1>Welcome</h1>
+<div>
+	Your username is <%= User.find(session[:user_id]).name %>
+</div>
+It's <%= Time.now %>
+
+<div>
+	<br />
+	You can view posts here <%= link_to 'Posts' , :controller => 'posts' , :action => 'index' %><br />
+    <% if User.find_by_name(User.find(session[:user_id]).name).privilege == 1 %>
+    <p> To view all users <%= link_to 'Users', :controller => 'users', :action => 'index' %></p>
+    <p>To create a new Admin account <%= link_to 'New users', :controller => 'users', :action => 'new' %> </p>
+    <% end %>
+</div>
+
+
